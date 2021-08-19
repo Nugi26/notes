@@ -1,0 +1,5 @@
+heroku login
+// go into heroku app directory
+heroku run bash -a APPNAME
+$ cd app
+APPNAME is the name of your Heroku application And in the folder app are your files.

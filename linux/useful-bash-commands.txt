@@ -1,0 +1,5 @@
+## get a number of line from the bottom of a list
+tail -n <numberOfLines>
+
+## disk usage (check folder size)
+du -hs <folder>

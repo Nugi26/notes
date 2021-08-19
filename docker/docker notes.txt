@@ -1,0 +1,31 @@
+// image adalah bundle dari app kita
+// container adalah wadah dimana images di run
+// show active containers:
+docker container ls
+// show all containers:
+docker container ls -a
+// create a container:
+docker container create --publish 27017:27017 2--name <namaContainernya> image:tag
+// run container:
+docker container start <namaImage>
+
+docker build -t dockername .
+docker run -d -p 80:80 \ --name docker-tutorial docker101tutorial
+docker ps --all       
+
+// get into container's bash:
+docker exec -it docker-name /bin/bash
+
+// set .env file on docker-compose:
+ env_file:
+- .env
+
+
+pada dasarnya container cuma membuka port 8080. Jadi semua incoming data dari host harus di forward ke port 8080. Jadi ada 2 cara untuk setting itu:
+1. expose port container sesuai dengan port yang dipakai app kita di host. Misalnya, jika app di host kita pakai port 3000, maka kita expose port 3000 di container kita. Alhasil di container kita ada 2 port yang terbuka: 8080 dan 3000.
+2. Forward port 3000 host kita ke port 8080 di container, dengan flag --publish 3000:8080.
+
+docker run --publish 8000:8080 --detach --name bb bulletinboard:1.0
+
+delete all images:
+docker rmi -f $(docker images -a -q)

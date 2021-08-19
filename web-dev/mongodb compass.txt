@@ -1,0 +1,6 @@
+press t to go to database list
+choose database > enter
+choose collections > enter
+ctrl Home
+press L to switch between docs
+press i to navigate between fields

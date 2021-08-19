@@ -1,0 +1,29 @@
+update:
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+sudo apt-get autoremove
+
+make shortcut:
+ln -s /shortcut/target
+
+install nvm on ubuntu:
+curl https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh | bash
+
+// check version
+node -v || node --version
+
+// list installed versions of node (via nvm)
+nvm ls
+
+// install specific version of node
+nvm install 6.9.2
+
+// set default version of node
+nvm alias default 6.9.2
+
+// switch version of node
+nvm use 6.9.1
+
+show linux version
+lsb_release -a

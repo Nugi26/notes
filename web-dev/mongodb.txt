@@ -1,0 +1,6 @@
+• sudo service mongodb status for checking the status of your database.
+• sudo service mongodb start to start running your database.
+• sudo service mongodb stop to stop running your database.
+
+test connection, database, port,and server status:
+mongo --eval 'db.runCommand({connectionStatus: 1})'

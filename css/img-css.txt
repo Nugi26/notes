@@ -1,0 +1,37 @@
+.photo > img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
+}
+
+xs img size: w-64 36
+
+padding-bottom trick to maintain image aspect ratio
+.img-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.img-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+better solution:
+<style>
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
+  } 
+</style>
+<img src="hero_image.jpg" alt="" width="500" height="500">
+
+// if you use lazy loading, use this in the html part:
+<img src="hero_800x400.jpg" alt=""
+  width="800" height="400" loading="lazy">

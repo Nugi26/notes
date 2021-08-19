@@ -1,0 +1,42 @@
+structure"
+-grid container
+--grid item
+--grid item
+
+defined by: 
+display: grid
+
+options:
+/* make 4 columns inside a grid with size of auto */
+// value can be: px, fr (fraction; 1fr is similar to flex-grow-1)
+  grid-template-columns: auto auto auto auto;
+// the 5th grid item will be wrapped into a new row
+
+/* make rows inside grid container */
+grid-auto-rows: 150px
+// define default height of grid items
+// if a grid item's height is not defined in grid-template-rows below, it will be automatically defined by 150[x.
+grid-template-rows: 100px 150px
+// first row will have 100px height, and the second will be 150px
+// and when the third item is made, it will automatically have height of 150px because of grid-auto-rows above.
+
+/* make 2 grid columns based on its contain */
+display: grid
+grid-template-columns: 200px 200px
+// the height will follow the size of its contain.
+
+/* make a 2 columns grid with min and max height */
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-auto-rows: minmax(1fr, auto);
+// the row will have min height of 1fr, but will grow based on its contain size.
+// if the max item is set to exact value (100px or 1fr), the contain larger than that will overflow outside of grid, which is bad.
+
+/* define gap between grid items */
+grid-row-gap: 5px;
+grid-column-gap: 5px;
+
+/*define start and end of grid item */
+grid-col-start: 1;
+grid-col-end: 3;
+// remember: ngitungnya dari tiap tepi awal kolom

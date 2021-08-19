@@ -1,0 +1,30 @@
+install WSL:
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+then restart
+
+install VM platform:
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+then restart
+
+update wsl 2 kernel:
+https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+
+Set WSL 2 as default:
+wsl --set-default-version 2
+
+check wsl version:
+wsl --list --verbose
+
+set wsl 2 to selected distro:
+wsl --set-version distroName 2
+
+open file directory on file explorer:
+\\wsl$\
+
+accessing windows file system from linux is slower than accessing real linux filesystem. so i need to copy active projects into /home/nugielinux/ for optimal performance.
+
+// sync from linux to windows
+rsync -rlptv --progress --delete --exclude '.git' --exclude 'node_modules' . ~/javascript/my\ notes/latihan-graphql/
+
+// sync from windows to linux
+rsync -rlptv --progress --delete --exclude '.git' --exclude 'node_modules' . ~/activeProjects/latihanGraphql/

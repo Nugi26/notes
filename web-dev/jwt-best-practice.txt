@@ -1,0 +1,8 @@
+inMemoryToken? Maybe use redist?
+best practice for jwt expire time is 15 mins
+But, the token will be 'silently refreshed' on client side.
+How refresh token implemented on server side
+what is httpOnly cookie
+how long refresh token valid: 200 days
+when force logout, invalidate refresh token for that user on server side. So the user will be logged out from every device.
+Note: For SSR on authenticated pages, it is vital that that the domain of the auth API (and hence the domain of the refresh_token cookie) is the same as the domain of the SSR server. Otherwise, our cookies won't be sent to the SSR server!

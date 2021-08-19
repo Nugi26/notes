@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+ notes:
+// this is like the main node server project
+  build:
+   context: .
+// similar to docker build --tag notes . where context is the Dockerfile location
+  ports:
+   - 8000:8000
+   - 9229:9229
+// similar to -p 9229:9229 etc....
+// port 9229 is used to attach debugger.
+  environment:
+   - SERVER_PORT=8000
+   - CONNECTIONSTRING=mongodb://mongo:27017/notes
+  volumes:
+   - ./:/app
+// set current project folder to become a volume and sync it to container's app directory. So we can work in our local project and rebuild the container to make changes to it.
+  command: npm run debug
+
+ mongo:
+  image: mongo:4.2.8
+// similar to using FROM on the Dockerfile
+  ports:
+   - 27017:27017
+  volumes:
+   - mongodb:/data/db
+   - mongodb_config:/data/configdb
+// map the mongodb and mongodb_config volumes created below to the container's data folder
+
+volumes:
+ mongodb:
+ mongodb_config:
+// create necessary volumes within the host machine to be mounted to the container above.

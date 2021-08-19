@@ -1,0 +1,13 @@
+ghost start/stop
+posts:
+created_at
+published_at
+updated_at
+html: content
+excerpt
+feature_image
+comment_id
+id
+reading_time: how many times it's read
+slug
+title
