@@ -16,7 +16,7 @@
       "private \\$_$12;",
       "",
       "/**",
-      " * constructor",
+      " * constructors",
       " * ",
       " * @access	public",
       " * @return	void",
