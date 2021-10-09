@@ -32,3 +32,5 @@ git rm --cached mylogfile.log
 ## and for folder:
 git rm --cached -r mydirectory
 
+## delete branch
+git branch -d <branch>
